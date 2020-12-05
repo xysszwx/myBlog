@@ -4,11 +4,14 @@ package com.zwx.blog.web;
 import com.github.pagehelper.PageInfo;
 import com.zwx.blog.NotFoundException;
 import com.zwx.blog.pojo.Blog;
+import com.zwx.blog.pojo.Tag;
+import com.zwx.blog.pojo.User;
 import com.zwx.blog.pojo.vo.BlogQuery;
 import com.zwx.blog.pojo.vo.SelectPage;
 import com.zwx.blog.service.BlogService;
 import com.zwx.blog.service.TagService;
 import com.zwx.blog.service.TypeService;
+import com.zwx.blog.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Controller
 public class IndexController {
@@ -30,6 +34,8 @@ public class IndexController {
     @Resource
     private TagService tagService;
 
+    @Resource
+    private UserService userService;
 
 
 
@@ -66,8 +72,12 @@ public class IndexController {
     }
 
     @GetMapping("/blog/{id}")
-    public String blog(){
-        System.out.println("-----方法执行-----");
+    public String blog(@PathVariable Long id ,Model model){
+        List<Tag> tags = tagService.queryByBlogId(id);
+        User user = userService.selectByBlogId(id);
+        model.addAttribute("user",user);
+        model.addAttribute("tags",tags);
+        model.addAttribute("blog",blogService.getAndTran(id));
         return "blog";
     }
 

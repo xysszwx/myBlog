@@ -30,4 +30,9 @@ public class UserServiceImpl implements UserService{
         //return null;
     }
 
+    @Override
+    public User selectByBlogId(Long id) {
+        return userMapper.selectByBlogId(id);
+    }
+
 }

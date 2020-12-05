@@ -274,4 +274,7 @@
       username = #{username,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <select id="selectByBlogId" parameterType="long" resultType="com.zwx.blog.pojo.User">
+    select u.* from t_user u left join t_blog b on u.id = b.user_id where b.id = #{id}
+  </select>
 </mapper>

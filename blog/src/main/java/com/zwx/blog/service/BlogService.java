@@ -12,6 +12,8 @@ public interface BlogService {
 
     Blog getBlog(Long id);
 
+    Blog getAndTran(Long id);
+
     PageInfo<Blog> listBlog(BlogQuery blogQuery);
     PageInfo<Blog> listBlog(String query,BlogQuery blogQuery);
 

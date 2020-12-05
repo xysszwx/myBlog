@@ -108,4 +108,9 @@ public class TagServiceImpl implements TagService{
     public void deleteTag(Long id) {
         tagMapper.deleteByPrimaryKey(id);
     }
+
+    @Override
+    public List<Tag> queryByBlogId(Long id) {
+        return tagMapper.selectByBlogId(id);
+    }
 }

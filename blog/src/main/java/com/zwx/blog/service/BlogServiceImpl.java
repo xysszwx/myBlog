@@ -9,6 +9,8 @@ import com.zwx.blog.pojo.Blog;
 import com.zwx.blog.pojo.BlogTags;
 import com.zwx.blog.pojo.vo.BlogQuery;
 import com.zwx.blog.pojo.vo.SelectPage;
+import com.zwx.blog.utils.MarkdownUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,6 +32,20 @@ public class BlogServiceImpl implements BlogService{
     public Blog getBlog(Long id) {
 
         return blogMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public Blog getAndTran(Long id) {
+        Blog blog = blogMapper.selectByPrimaryKey(id);
+        if(blog==null){
+            throw new NotFoundException("该博客不存在");
+        }
+        Blog b1 = new Blog();
+        BeanUtils.copyProperties(blog,b1);
+        String content = b1.getContent();
+        String s = MarkdownUtils.markdownToHtmlExtensions(content);
+        b1.setContent(s);
+        return b1;
     }
 
     @Override

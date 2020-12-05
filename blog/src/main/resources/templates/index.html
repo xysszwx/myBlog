@@ -59,7 +59,7 @@
 								<div class="ui middle aligned mobile reversed stackable grid" >
 									<div class="eleven wide column">
 										<h3 class="ui header">  <!--th:href="@{/blog/{id}(id=${blog.id})"--> <!---->
-											<a href="#" class="m-black" target="_blank" th:text="${blog.title}"  >你真的理解XXXX</a>
+											<a href="#" class="m-black" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" th:text="${blog.title}"  >你真的理解XXXX</a>
 
 										</h3> <!---->
 										<p class="m-text" th:text="|${blog.description}.....|">你好，我们是你身体里的细胞。
@@ -98,7 +98,7 @@
 									</div>
 									<div class="five wide column"> <!--th:href="@{/blog/{id}(id=${blog.id})"-->
 										<a href="#" target="_blank" >   <!---->
-											<img src="https://picsum.photos/seed/200/800/450" class="ui rounded image" alt="" th:src="@{${blog.firstPicture}}" />
+											<img src="https://picsum.photos/seed/200/800/450" th:href="@{/blog/{id}(id=${blog.id})}" class="ui rounded image" alt="" th:src="@{${blog.firstPicture}}" />
 										</a>
 									</div>
 								</div>

@@ -25,4 +25,6 @@ public interface BlogTagsMapper {
     int deleteByBlogId(Long id);
 
     Integer countBlogTag(Long id);
+
+
 }

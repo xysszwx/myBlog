@@ -38,4 +38,6 @@ public interface TagMapper {
     int updateByPrimaryKey(Tag record);
 
     List<Tag> selectTagTop(SelectPage SelectPage);
+
+    List<Tag> selectByBlogId(Long id);
 }

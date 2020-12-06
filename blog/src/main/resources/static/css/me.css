@@ -1,7 +1,27 @@
 body{
-	background: url(../img/trees.png);
+	background: url(../img/bk1.jpg);
+	background-repeat:no-repeat ;
+	background-size:100% 100%;
+	background-attachment: fixed;
 }
-
+.m-border{
+	border-color:rgb(151,151,237) !important;
+}
+.m-bk-color{
+	background-color: whitesmoke !important;
+}
+.m-color{
+	background-color: transparent !important;
+}
+.m-color2{
+	background-color: rgb(151,151,237) !important;
+}
+.m-text-color{
+	color:rgb(151,151,237) !important;
+}
+.m-i-small{
+	font-size: 0.75em !important;
+}
 .m-padding-mini{
 	padding: 0.2em !important;
 }
@@ -11,7 +31,14 @@ body{
 .m-padded{
 	padding: 1em !important;
 }
+.m-padded-tb-big{
+	padding: 1.2em !important;
 
+}
+.m-padded-tb-mini{
+	padding-top: 0.2em !important;
+	padding-bottom:0.2em !important;
+}
 .m-padding-tb-mini{
 	padding-top: 0.2em !important;
 	padding-bottom:0.2em !important;
@@ -72,7 +99,9 @@ body{
 .m-text-lined{
 	line-height: 1.8;
 }
-
+.m-text-size{
+	font-size: larger !important;
+}
 
 .m-opacity-mini{
 	opacity: 0.8 !important;
@@ -114,7 +143,10 @@ body{
 .m-margin-bottom-small{
 	margin-bottom: 0.5em !important;
 }
-
+.m-margin-big{
+	margin-left: 0.8em !important;
+	margin-right: 0.8em !important;
+}
 
 /* color */
 .m-black{

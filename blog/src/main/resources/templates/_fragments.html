@@ -13,15 +13,15 @@
 </head>
 <body>
 <!--导航-->
-<nav th:fragment="menu(n)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small" style="background-color: rgb(10,151,169) !important;">
-    <div class="ui container">
+<nav th:fragment="menu(n)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small " style="background-color: transparent !important;padding-left:0em !important;">
+    <div class="ui container ">
         <div class="ui inverted secondary stackable menu">
-            <h2 class="ui teal header item" style="color:white !important;">Blog</h2>
-            <a href="#"  class="m-item item m-mobile-hide " th:classappend="${n==1} ? 'active'" style="color:white !important;"><i class="mini home icon"></i>首页</a>
-            <a href="#"  class="m-item item m-mobile-hide" th:classappend="${n==2} ? 'active'" style="color:white !important;"><i class="mini idea icon"></i>分类</a>
-            <a href="#"  class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'" style="color:white !important;"><i class="mini tags icon"></i>标签</a>
-            <a href="#"  class="m-item item m-mobile-hide" th:classappend="${n==4} ? 'active'" style="color:white !important;"><i class="mini clone icon"></i>归档</a>
-            <a href="#"  class="m-item item m-mobile-hide" th:classappend="${n==5} ? 'active'" style="color:white !important;"><i class="mini info icon"></i>关于我</a>
+            <h2 class="ui  header item " style="color:white !important;margin-left: 0em !important;" >XyssZwx</h2>
+            <a href="#"  class="m-item item m-mobile-hide m-padded-tb-big m-text-size m-margin-big" th:classappend="${n==1} ? 'active'" style="color:white !important;"><i class="m-i-small home icon"></i>首页</a>
+            <a href="#"  class="m-item item m-mobile-hide m-padded-tb-big m-text-size m-margin-big" th:classappend="${n==2} ? 'active'" style="color:white !important;"><i class="m-i-small idea icon"></i>分类</a>
+            <a href="#"  class="m-item item m-mobile-hide m-padded-tb-big m-text-size m-margin-big" th:classappend="${n==3} ? 'active'" style="color:white !important;"><i class="m-i-small tags icon"></i>标签</a>
+            <a href="#"  class="m-item item m-mobile-hide m-padded-tb-big m-text-size m-margin-big" th:classappend="${n==4} ? 'active'" style="color:white !important;"><i class="m-i-small clone icon"></i>归档</a>
+            <a href="#"  class="m-item item m-mobile-hide m-padded-tb-big m-text-size m-margin-big" th:classappend="${n==5} ? 'active'" style="color:white !important;"><i class="m-i-small info icon"></i>关于我</a>
             <div class="right m-item item m-mobile-hide">
                 <form name="search" action="#" th:action="@{/search}" method="post" target="_blank">
                 <div class="ui icon inverted transparent input" style="color:white !important;">
@@ -38,7 +38,7 @@
 </nav>
 
 
-<footer th:fragment="footer" class="ui inverted vertical segment m-padding-tb-massive" style="background-color: rgb(10,151,169) !important;">
+<footer th:fragment="footer" class="ui inverted vertical segment m-padding-tb-massive" style="background-color: transparent !important;">
     <div class="ui center aligned container">
         <div class="ui inverted divided stackable grid">
             <div class="three wide column">

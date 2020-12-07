@@ -431,7 +431,7 @@ h5,h6{font-size:1em;}
 					</div>
 					<!-- 标签 -->
 					<div class="m-padded-lr-responsive" >
-						<div class="ui basic teal left pointing label" th:each="tag : ${tags}" th:text="${tag.name}">方法论</div>
+						<div class="ui basic  left pointing label m-color2" th:each="tag : ${tags}" th:text="${tag.name}">方法论</div>
 					</div>
 					<!-- 赞赏 -->
 					<div class="ui center aligned basic segment">
@@ -471,9 +471,9 @@ h5,h6{font-size:1em;}
 				</div>
 				<div class="ui bottom attached segment">
 					<!-- 留言区域列表 -->
-					<div id="comment-container" class="ui teal segment">
+					<div id="comment-container" class="ui  segment ">
 						<div th:fragment="commentList">
-							<div class="ui small comments" style="max-width: 100%;">
+							<div class="ui small comments" style="max-width: 100%;" >
 								<h3 class="ui dividing header">评论</h3>
 								<div class="comment" th:each="comment : ${comments}">
 									<a class="avatar">
@@ -498,7 +498,7 @@ h5,h6{font-size:1em;}
 											</a>
 											<div class="content">
 												<a class="author" >
-													<span th:text="${recomment.nickname}">Matt</span>&nbsp;&nbsp;<span th:text="|@ ${comment.nickname}|">@ 小白</span>
+													<span th:text="${recomment.nickname}">Matt</span>&nbsp;&nbsp;<span th:text="|@ ${comment.nickname}|" class="m-text-color m-text-thin">@ 小白</span>
 												</a>
 												<div class="metadata">
 													<span class="date" th:text="${#dates.format(recomment.createTime,'yyyy-MM-dd HH-mm')}">Today at 5:42PM</span>
@@ -592,7 +592,7 @@ h5,h6{font-size:1em;}
 								</div>
 							</div>
 							<div class="field  m-mobile-wide m-margin-bottom-small">
-								<button id="submitBtn" type="button" class="ui teal button m-mobile-wide">
+								<button id="submitBtn" type="button" class="ui  button m-mobile-wide m-color2">
 									<i class="edit icon"></i>发布
 								</button>
 							</div>
@@ -606,8 +606,8 @@ h5,h6{font-size:1em;}
 
 		<div id="toolbar" class="m-padded m-fixed m-right-bottom" style="display: none;" >
 		  <div class="ui vertical icon buttons ">
-		    <button type="button" class="ui toc teal button" >目录</button>
-		    <a href="#comment-container" class="ui teal button" >留言</a>
+		    <button type="button" class="ui toc  button m-color2" >目录</button>
+		    <a href="#comment-container" class="ui  button m-color2" >留言</a>
 		    <button class="ui wechat icon button"><i class="weixin icon"></i></button>
 		    <div id="toTop-button" class="ui icon button" ><i class="chevron up icon"></i></div>
 		  </div>

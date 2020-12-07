@@ -484,3 +484,69 @@ org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property o
 2020-12-07 08:55:08.654  INFO 5516 --- [http-nio-8080-exec-6] com.zwx.blog.aspect.LogAspect            : Result:redirect:/comments/1
 2020-12-07 08:55:08.665  INFO 5516 --- [http-nio-8080-exec-1] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/comments/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.CommentController.comments, args=[1, {}])
 2020-12-07 08:55:08.673  INFO 5516 --- [http-nio-8080-exec-1] com.zwx.blog.aspect.LogAspect            : Result:blog :: commentList
+2020-12-07 09:38:58.634  INFO 2772 --- [restartedMain] com.zwx.blog.BlogApplication             : Starting BlogApplication on DESKTOP-LJNS8I6 with PID 2772 (E:\myrepository\blog\target\classes started by 张万行zwx in E:\myrepository\blog)
+2020-12-07 09:38:58.643 DEBUG 2772 --- [restartedMain] com.zwx.blog.BlogApplication             : Running with Spring Boot v2.2.2.RELEASE, Spring v5.2.2.RELEASE
+2020-12-07 09:38:58.643  INFO 2772 --- [restartedMain] com.zwx.blog.BlogApplication             : The following profiles are active: dev
+2020-12-07 09:38:58.683  INFO 2772 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-07 09:38:58.683  INFO 2772 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-07 09:39:00.320  INFO 2772 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-12-07 09:39:00.328  INFO 2772 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-07 09:39:00.328  INFO 2772 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-12-07 09:39:00.414  INFO 2772 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-07 09:39:00.414  INFO 2772 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1731 ms
+2020-12-07 09:39:02.169  INFO 2772 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-07 09:39:02.247  INFO 2772 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-12-07 09:39:03.707  INFO 2772 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-12-07 09:39:03.745  INFO 2772 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-07 09:39:03.748  INFO 2772 --- [restartedMain] com.zwx.blog.BlogApplication             : Started BlogApplication in 6.634 seconds (JVM running for 8.218)
+2020-12-07 09:39:14.715  INFO 2772 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-07 09:39:14.715  INFO 2772 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-07 09:39:14.727  INFO 2772 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2020-12-07 09:39:14.950  INFO 2772 --- [http-nio-8080-exec-1] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.IndexController.index, args=[com.zwx.blog.pojo.vo.BlogQuery@1821cdbb, 1, {blogQuery=com.zwx.blog.pojo.vo.BlogQuery@1821cdbb, org.springframework.validation.BindingResult.blogQuery=org.springframework.validation.BeanPropertyBindingResult: 0 errors}])
+2020-12-07 09:39:15.024  INFO 2772 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-07 09:39:15.181  INFO 2772 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-07 09:39:15.511  INFO 2772 --- [http-nio-8080-exec-1] com.zwx.blog.aspect.LogAspect            : Result:index
+2020-12-07 09:39:19.873  INFO 2772 --- [http-nio-8080-exec-7] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/blog/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.IndexController.blog, args=[1, {}])
+2020-12-07 09:39:20.471  INFO 2772 --- [http-nio-8080-exec-7] com.zwx.blog.aspect.LogAspect            : Result:blog
+2020-12-07 09:39:21.380  INFO 2772 --- [http-nio-8080-exec-7] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/comments/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.CommentController.comments, args=[1, {}])
+2020-12-07 09:39:22.144  INFO 2772 --- [http-nio-8080-exec-7] com.zwx.blog.aspect.LogAspect            : Result:blog :: commentList
+2020-12-07 09:39:50.701  INFO 2772 --- [http-nio-8080-exec-9] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/blog/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.IndexController.blog, args=[1, {}])
+2020-12-07 09:39:50.723  INFO 2772 --- [http-nio-8080-exec-9] com.zwx.blog.aspect.LogAspect            : Result:blog
+2020-12-07 09:39:51.995  INFO 2772 --- [http-nio-8080-exec-3] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/comments/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.CommentController.comments, args=[1, {}])
+2020-12-07 09:39:52.021  INFO 2772 --- [http-nio-8080-exec-3] com.zwx.blog.aspect.LogAspect            : Result:blog :: commentList
+2020-12-07 09:42:56.270  INFO 2772 --- [http-nio-8080-exec-9] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/blog/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.IndexController.blog, args=[1, {}])
+2020-12-07 09:42:56.283  INFO 2772 --- [http-nio-8080-exec-9] com.zwx.blog.aspect.LogAspect            : Result:blog
+2020-12-07 09:42:56.982  INFO 2772 --- [http-nio-8080-exec-3] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/comments/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.CommentController.comments, args=[1, {}])
+2020-12-07 09:42:56.999  INFO 2772 --- [http-nio-8080-exec-3] com.zwx.blog.aspect.LogAspect            : Result:blog :: commentList
+2020-12-07 09:43:50.643  INFO 2772 --- [http-nio-8080-exec-2] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/blog/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.IndexController.blog, args=[1, {}])
+2020-12-07 09:43:50.665  INFO 2772 --- [http-nio-8080-exec-2] com.zwx.blog.aspect.LogAspect            : Result:blog
+2020-12-07 09:43:51.843  INFO 2772 --- [http-nio-8080-exec-5] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/comments/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.CommentController.comments, args=[1, {}])
+2020-12-07 09:43:51.869  INFO 2772 --- [http-nio-8080-exec-5] com.zwx.blog.aspect.LogAspect            : Result:blog :: commentList
+2020-12-07 09:44:37.933  INFO 2772 --- [http-nio-8080-exec-6] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/blog/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.IndexController.blog, args=[1, {}])
+2020-12-07 09:44:37.946  INFO 2772 --- [http-nio-8080-exec-6] com.zwx.blog.aspect.LogAspect            : Result:blog
+2020-12-07 09:44:38.783  INFO 2772 --- [http-nio-8080-exec-8] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/comments/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.CommentController.comments, args=[1, {}])
+2020-12-07 09:44:38.806  INFO 2772 --- [http-nio-8080-exec-8] com.zwx.blog.aspect.LogAspect            : Result:blog :: commentList
+2020-12-07 09:46:01.708  INFO 2772 --- [http-nio-8080-exec-7] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/blog/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.IndexController.blog, args=[1, {}])
+2020-12-07 09:46:01.734  INFO 2772 --- [http-nio-8080-exec-7] com.zwx.blog.aspect.LogAspect            : Result:blog
+2020-12-07 09:46:02.744  INFO 2772 --- [http-nio-8080-exec-6] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/comments/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.CommentController.comments, args=[1, {}])
+2020-12-07 09:46:02.759  INFO 2772 --- [http-nio-8080-exec-6] com.zwx.blog.aspect.LogAspect            : Result:blog :: commentList
+2020-12-07 09:46:23.730  INFO 2772 --- [http-nio-8080-exec-10] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/blog/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.IndexController.blog, args=[1, {}])
+2020-12-07 09:46:23.741  INFO 2772 --- [http-nio-8080-exec-10] com.zwx.blog.aspect.LogAspect            : Result:blog
+2020-12-07 09:46:24.594  INFO 2772 --- [http-nio-8080-exec-9] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/comments/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.CommentController.comments, args=[1, {}])
+2020-12-07 09:46:24.609  INFO 2772 --- [http-nio-8080-exec-9] com.zwx.blog.aspect.LogAspect            : Result:blog :: commentList
+2020-12-07 09:47:07.135  INFO 2772 --- [http-nio-8080-exec-7] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/blog/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.IndexController.blog, args=[1, {}])
+2020-12-07 09:47:07.145  INFO 2772 --- [http-nio-8080-exec-7] com.zwx.blog.aspect.LogAspect            : Result:blog
+2020-12-07 09:47:07.854  INFO 2772 --- [http-nio-8080-exec-8] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/comments/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.CommentController.comments, args=[1, {}])
+2020-12-07 09:47:07.869  INFO 2772 --- [http-nio-8080-exec-8] com.zwx.blog.aspect.LogAspect            : Result:blog :: commentList
+2020-12-07 09:47:51.845  INFO 2772 --- [http-nio-8080-exec-6] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/blog/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.IndexController.blog, args=[1, {}])
+2020-12-07 09:47:51.861  INFO 2772 --- [http-nio-8080-exec-6] com.zwx.blog.aspect.LogAspect            : Result:blog
+2020-12-07 09:47:53.576  INFO 2772 --- [http-nio-8080-exec-7] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/comments/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.CommentController.comments, args=[1, {}])
+2020-12-07 09:47:53.589  INFO 2772 --- [http-nio-8080-exec-7] com.zwx.blog.aspect.LogAspect            : Result:blog :: commentList
+2020-12-07 09:48:05.488  INFO 2772 --- [http-nio-8080-exec-9] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/blog/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.IndexController.blog, args=[1, {}])
+2020-12-07 09:48:05.501  INFO 2772 --- [http-nio-8080-exec-9] com.zwx.blog.aspect.LogAspect            : Result:blog
+2020-12-07 09:48:06.917  INFO 2772 --- [http-nio-8080-exec-5] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/comments/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.CommentController.comments, args=[1, {}])
+2020-12-07 09:48:06.937  INFO 2772 --- [http-nio-8080-exec-5] com.zwx.blog.aspect.LogAspect            : Result:blog :: commentList
+2020-12-07 09:48:24.816  INFO 2772 --- [http-nio-8080-exec-10] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/blog/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.IndexController.blog, args=[1, {}])
+2020-12-07 09:48:24.832  INFO 2772 --- [http-nio-8080-exec-10] com.zwx.blog.aspect.LogAspect            : Result:blog
+2020-12-07 09:48:26.371  INFO 2772 --- [http-nio-8080-exec-7] com.zwx.blog.aspect.LogAspect            : Request : LogAspect.RequestLog(url=http://localhost:8080/comments/1, ip=0:0:0:0:0:0:0:1, classMethod=com.zwx.blog.web.CommentController.comments, args=[1, {}])
+2020-12-07 09:48:26.388  INFO 2772 --- [http-nio-8080-exec-7] com.zwx.blog.aspect.LogAspect            : Result:blog :: commentList

@@ -475,23 +475,45 @@ h5,h6{font-size:1em;}
 						<div th:fragment="commentList">
 							<div class="ui small comments" style="max-width: 100%;">
 								<h3 class="ui dividing header">评论</h3>
-								<div class="comment">
+								<div class="comment" th:each="comment : ${comments}">
 									<a class="avatar">
-										<img src="https://picsum.photos/seed/500/100/100">
+										<img src="https://picsum.photos/seed/500/100/100" th:src="${comment.avatar}">
 									</a>
 									<div class="content">
-										<a class="author">Matt</a>
+										<a class="author" th:text="${comment.nickname}">Matt</a>
 										<div class="metadata">
-											<span class="date">Today at 5:42PM</span>
+											<span class="date" th:text="${#dates.format(comment.createTime,'yyyy-MM-dd HH-mm')}">Today at 5:42PM</span>
 										</div>
-										<div class="text">
+										<div class="text" th:text="${comment.content}">
 											How artistic!
 										</div>
 										<div class="actions">
-											<a class="reply" data-commentid="1" data-commentnickname="Matt" onclick="reply(this)">回复</a>
+											<a class="reply" th:attr="data-commentid=${comment.id},data-commentnickname=${comment.nickname}" data-commentid="1" data-commentnickname="Matt" onclick="reply(this)">回复</a>
+										</div>
+									</div>
+									<div class="comments" th:if="${comment.replyComment}!=null">
+										<div class="comment" th:each="recomment : ${comment.replyComment}">
+											<a class="avatar">
+												<img src="https://picsum.photos/seed/500/100/100" th:src="${recomment.avatar}">
+											</a>
+											<div class="content">
+												<a class="author" >
+													<span th:text="${recomment.nickname}">Matt</span>&nbsp;&nbsp;<span th:text="|@ ${comment.nickname}|">@ 小白</span>
+												</a>
+												<div class="metadata">
+													<span class="date" th:text="${#dates.format(recomment.createTime,'yyyy-MM-dd HH-mm')}">Today at 5:42PM</span>
+												</div>
+												<div class="text" th:text="${recomment.content}">
+													How artistic!
+												</div>
+												<div class="actions">
+													<a class="reply" th:attr="data-commentid=${recomment.id},data-commentnickname=${recomment.nickname}" data-commentid="1" data-commentnickname="Matt" onclick="reply(this)">回复</a>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
+								<!--/*-->
 								<div class="comment">
 									<a class="avatar">
 										<img src="https://picsum.photos/seed/500/100/100">
@@ -545,14 +567,14 @@ h5,h6{font-size:1em;}
 										</div>
 									</div>
 								</div>
-
+								<!--*/-->
 							</div>
 						</div>
 					</div>
 					
 					<div id="comment-form" class="ui form">
-						<input type="text" name="blogId" th:value="${blog.id}">
-						<input type="text" name="parentCommentId" value="-1">
+						<input type="hidden" name="blogId" th:value="${blog.id}">
+						<input type="hidden" name="parentCommentId" value="-1">
 						<div class="field">
 							<textarea  name="content" placeholder="请输入评论信息..."></textarea>
 						</div>
@@ -560,7 +582,7 @@ h5,h6{font-size:1em;}
 							<div class="field m-mobile-wide m-margin-bottom-small">
 								<div class="ui left icon input ">
 									<i class="user icon"></i>
-								<input type="text" name="nivkname" placeholder="姓名">
+								<input type="text" name="nickname" placeholder="姓名">
 								</div>
 							</div>
 							<div class="field  m-mobile-wide m-margin-bottom-small">
@@ -740,10 +762,15 @@ h5,h6{font-size:1em;}
 				}
 			});
 
+			$(function () {
+				$("#comment-container").load(/*[[@{/comments/{id}(id=${blog.id})}]]*/"comments/6");
+			});
+
 			$('#submitBtn').click(function () {
 				var boo = $('.ui.form').form('validate form');
 				if(boo){
 					console.log("校验成功");
+					postDate();
 				}else{
 					console.log("校验失败");
 				}
@@ -761,7 +788,7 @@ h5,h6{font-size:1em;}
 					clearContent();
 				});
 			}
-			
+			4
 			function clearContent() {
 				$("[name='content']").val('');
 				$("[name='parentCommentId']").val(-1);

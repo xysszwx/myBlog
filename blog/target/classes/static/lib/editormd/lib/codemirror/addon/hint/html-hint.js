@@ -124,7 +124,7 @@
     h1: s, h2: s, h3: s, h4: s, h5: s, h6: s,
     head: {
       attrs: {},
-      children: ["title", "base", "link", "style", "meta", "script", "noscript", "command"]
+      children: ["logo.ico", "base", "link", "style", "meta", "script", "noscript", "command"]
     },
     header: s,
     hgroup: s,

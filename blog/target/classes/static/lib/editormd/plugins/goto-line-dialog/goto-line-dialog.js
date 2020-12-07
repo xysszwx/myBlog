@@ -83,7 +83,7 @@
 
 				dialog = this.createDialog({
 					name       : dialogName,
-					title      : dialogLang.title,
+					title      : dialogLang.logo,
 					width      : 400,
 					height     : 180,
 					mask       : settings.dialogShowMask,

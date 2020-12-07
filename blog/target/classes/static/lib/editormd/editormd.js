@@ -1190,8 +1190,8 @@
 
             toolbarMenu.html(menu);
             
-            toolbarMenu.find("[title=\"Lowercase\"]").attr("title", settings.lang.toolbar.lowercase);
-            toolbarMenu.find("[title=\"ucwords\"]").attr("title", settings.lang.toolbar.ucwords);
+            toolbarMenu.find("[title=\"Lowercase\"]").attr("logo.ico", settings.lang.toolbar.lowercase);
+            toolbarMenu.find("[title=\"ucwords\"]").attr("logo.ico", settings.lang.toolbar.ucwords);
             
             this.setToolbarHandler();
             this.setToolbarAutoFixed();
@@ -2370,7 +2370,7 @@
                 var unWatchIcon = settings.toolbarIconsClass.unwatch;
                 
                 var icon        = this.toolbar.find(".fa[name=watch]");
-                icon.parent().attr("title", settings.lang.toolbar.watch);
+                icon.parent().attr("logo.ico", settings.lang.toolbar.watch);
                 icon.removeClass(unWatchIcon).addClass(watchIcon);
             }
             
@@ -2408,7 +2408,7 @@
                 var unWatchIcon = settings.toolbarIconsClass.unwatch;
                 
                 var icon    = this.toolbar.find(".fa[name=watch]");
-                icon.parent().attr("title", settings.lang.toolbar.unwatch);
+                icon.parent().attr("logo.ico", settings.lang.toolbar.unwatch);
                 icon.removeClass(watchIcon).addClass(unWatchIcon);
             }
             
@@ -4248,10 +4248,10 @@
 
         var html         = "<div class=\"" + classPrefix + "dialog " + dialogName + "\">";
 
-        if (options.title !== "")
+        if (options.logo !== "")
         {
             html += "<div class=\"" + classPrefix + "dialog-header\"" + ( (options.drag) ? " style=\"cursor: move;\"" : "" ) + ">";
-            html += "<strong class=\"" + classPrefix + "dialog-title\">" + options.title + "</strong>";
+            html += "<strong class=\"" + classPrefix + "dialog-title\">" + options.logo + "</strong>";
             html += "</div>";
         }
 
@@ -4350,7 +4350,7 @@
             }
         }
 
-        if (options.title !== "" && options.drag)
+        if (options.logo !== "" && options.drag)
         {                        
             var posX, posY;
             var dialogHeader = dialog.children("." + classPrefix + "dialog-header");

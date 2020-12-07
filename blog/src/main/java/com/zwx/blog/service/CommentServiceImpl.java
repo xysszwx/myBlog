@@ -4,7 +4,6 @@ import com.zwx.blog.NotFoundException;
 import com.zwx.blog.dao.CommentMapper;
 import com.zwx.blog.pojo.Comment;
 import com.zwx.blog.pojo.CommentExample;
-import com.zwx.blog.pojo.vo.CommentModule;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -73,7 +72,7 @@ public class CommentServiceImpl implements CommentService{
      * @return
      */
     private void combineChildren(List<Comment> comments) {
-        List<CommentModule> commentModules = new ArrayList<>();
+
 
 
 

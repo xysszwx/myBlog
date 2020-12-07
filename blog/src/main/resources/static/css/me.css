@@ -5,7 +5,13 @@ body{
 	background-attachment: fixed;
 }
 .m-border{
-	border-color:rgb(151,151,237) !important;
+	border-top: 2px rgb(151,151,237) solid !important;
+}
+.m-border-btn{
+	border: 2px rgb(151,151,237) solid !important;
+}
+.m-border-btn-o{
+	border: 1.5px rgb(151,151,237) solid !important;
 }
 .m-bk-color{
 	background-color: whitesmoke !important;

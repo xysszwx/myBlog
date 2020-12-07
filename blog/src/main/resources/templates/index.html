@@ -409,10 +409,10 @@
 						<div class="ui bottom attached segment" th:if="${page.pages}>1">
 							<div class="ui middle aligned two column grid" >
 								<div class="column">
-									<a th:href="@{/(page=${page.pageNum}-1)}"   th:unless="${page.isFirstPage}" href="" class="ui mini   basic button m-border">上一页</a>
+									<a th:href="@{/(page=${page.pageNum}-1)}"   th:unless="${page.isFirstPage}" href="" class="ui mini   about button m-color2" style="color:white;">上一页</a>
 								</div>
 								<div class="right aligned column">
-									<a th:href="@{/(page=${page.pageNum}+1)}"  th:unless="${page.isLastPage}" href="" class="ui mini  basic button m-border m-text-color">下一页</a>
+									<a th:href="@{/(page=${page.pageNum}+1)}"  th:unless="${page.isLastPage}" href="" class="ui mini  button m-color2" style="color:white;">下一页</a>
 								</div>
 							</div>
 						</div>

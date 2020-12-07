@@ -1,17 +1,29 @@
 package com.zwx.blog.pojo;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Tag implements Serializable {
     private Long id;
 
     private String name;
 
+    private List<Blog> blogs;
+
+
     private static final long serialVersionUID = 1L;
 
     public Tag(Long id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public List<Blog> getBlogs() {
+        return blogs;
+    }
+
+    public void setBlogs(List<Blog> blogs) {
+        this.blogs = blogs;
     }
 
     public Tag() {

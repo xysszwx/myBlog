@@ -524,4 +524,13 @@ select max(id) from t_blog
   <select id="selectByText" parameterType="string" resultType="com.zwx.blog.pojo.Blog">
     select * from t_blog where title like concat('%',#{query},'%') or  content like concat('%',#{query},'%')
   </select>
+
+  <update id="updateViews" parameterType="long" >
+        update t_blog set views = views+1 where id = #{id}
+  </update>
+  <select id="selectByTId" parameterType="long" resultType="com.zwx.blog.pojo.Blog">
+    select b.* from t_blog b left join t_blog_tags bt on b.id = bt.blogs_id
+        where tags_id = #{id}
+
+  </select>
 </mapper>

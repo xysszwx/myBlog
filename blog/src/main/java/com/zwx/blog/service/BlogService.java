@@ -15,6 +15,7 @@ public interface BlogService {
     Blog getAndTran(Long id);
 
     PageInfo<Blog> listBlog(BlogQuery blogQuery);
+
     PageInfo<Blog> listBlog(String query,BlogQuery blogQuery);
 
     PageInfo<Blog> listBlog(SelectPage selectPage);
@@ -28,4 +29,9 @@ public interface BlogService {
     void deleteBlog(Long id);
 
     List<Blog> selectRecommend(Integer size);
+
+    List<Blog> queryBlogList(Long id);
+
+    PageInfo<Blog> listByTag(SelectPage selectPage);
+    List<Blog> queryBlogs(Long id);
 }

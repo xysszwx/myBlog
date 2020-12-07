@@ -3,16 +3,16 @@ package com.zwx.blog.pojo.vo;
 public class BlogQuery extends SelectPage{
     private String title;
     private Boolean recommend;
-    private Integer typeId;
+    private Long typeId;
 
 
 
 
-    public Integer getTypeId() {
+    public Long getTypeId() {
         return typeId;
     }
 
-    public void setTypeId(Integer typeId) {
+    public void setTypeId(Long typeId) {
         this.typeId = typeId;
     }
 

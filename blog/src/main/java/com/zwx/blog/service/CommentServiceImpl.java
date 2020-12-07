@@ -27,7 +27,7 @@ public class CommentServiceImpl implements CommentService{
         CommentExample.Criteria criteria = commentExample.createCriteria();
         criteria.andBlogIdEqualTo(id);
         criteria.andParentCommentIdIsNull();
-        commentExample.setOrderByClause("create_time desc");
+        commentExample.setOrderByClause("create_time asc");
         List<Comment> comments = commentMapper.selectByExample(commentExample);
         return  eachComment(comments);
     }

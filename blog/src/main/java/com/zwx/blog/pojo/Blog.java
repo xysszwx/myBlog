@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 public class Blog implements Serializable {
     private Long id;
@@ -43,6 +44,16 @@ public class Blog implements Serializable {
     private String name;
 
     private String tagIds;
+
+    private List<Tag> tagss;
+
+    public List<Tag> getTagss() {
+        return tagss;
+    }
+
+    public void setTagss(List<Tag> tagss) {
+        this.tagss = tagss;
+    }
 
     public String getName() {
         return name;

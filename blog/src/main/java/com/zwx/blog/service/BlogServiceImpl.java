@@ -5,7 +5,9 @@ import com.github.pagehelper.PageInfo;
 import com.zwx.blog.NotFoundException;
 import com.zwx.blog.dao.BlogMapper;
 import com.zwx.blog.dao.BlogTagsMapper;
+import com.zwx.blog.dao.TagMapper;
 import com.zwx.blog.pojo.Blog;
+import com.zwx.blog.pojo.BlogExample;
 import com.zwx.blog.pojo.BlogTags;
 import com.zwx.blog.pojo.vo.BlogQuery;
 import com.zwx.blog.pojo.vo.SelectPage;
@@ -20,7 +22,8 @@ import java.util.Date;
 import java.util.List;
 
 @Service
-public class BlogServiceImpl implements BlogService{
+public class BlogServiceImpl
+        implements BlogService{
 
     @Resource
     private BlogMapper blogMapper;
@@ -28,12 +31,16 @@ public class BlogServiceImpl implements BlogService{
     @Resource
     private BlogTagsMapper blogTagsMapper;
 
+    @Resource
+    private TagMapper tagMapper;
+
     @Override
     public Blog getBlog(Long id) {
 
         return blogMapper.selectByPrimaryKey(id);
     }
 
+    @Transactional
     @Override
     public Blog getAndTran(Long id) {
         Blog blog = blogMapper.selectByPrimaryKey(id);
@@ -45,6 +52,8 @@ public class BlogServiceImpl implements BlogService{
         String content = b1.getContent();
         String s = MarkdownUtils.markdownToHtmlExtensions(content);
         b1.setContent(s);
+
+        blogMapper.updateViews(id);
         return b1;
     }
 
@@ -132,5 +141,28 @@ public class BlogServiceImpl implements BlogService{
         SelectPage selectPage = new SelectPage();
         selectPage.setPageSize(size);
         return blogMapper.selectRecommend(selectPage);
+    }
+
+    public List<Blog> queryBlogList(Long id){
+        BlogExample blogExample = new BlogExample();
+        BlogExample.Criteria criteria = blogExample.createCriteria();
+        criteria.andTypeIdEqualTo(id);
+        List<Blog> blogs = blogMapper.selectByExample(blogExample);
+        return blogs;
+    }
+
+    @Override
+    public PageInfo<Blog> listByTag(SelectPage selectPage) {
+        PageHelper.startPage(selectPage.getPageNum(),selectPage.getPageSize());
+        List<Blog> blogs = blogMapper.selectByTId(selectPage.getId());
+        for(Blog blog : blogs){
+            blog.setTagss(tagMapper.selectByBlogId(blog.getId()));
+        }
+        PageInfo<Blog> pageInfo = new PageInfo(blogs);
+        return pageInfo;
+    }
+
+    public List<Blog> queryBlogs(Long id){
+        return blogMapper.selectByTId(id);
     }
 }

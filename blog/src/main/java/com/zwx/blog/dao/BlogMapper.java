@@ -39,4 +39,9 @@ public interface BlogMapper {
     List<Blog> selectByText(String query);
 
     int insertReKey(Blog blog);
+
+    int updateViews(Long id);
+
+    List<Blog> selectByTId(Long id);
+
 }

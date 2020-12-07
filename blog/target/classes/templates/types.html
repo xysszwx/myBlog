@@ -40,19 +40,20 @@
 				<div class="ui top attached segment">
 					<div class="ui middle aligned two column grid">
 						<div class="column">
-							<h3 class="ui teal header">分类</h3>
+							<h3 class="ui  header m-text-color">分类</h3>
 						</div>
 						<div class="right aligned column">
-							共<h2 class="ui orange header m-inline-block m-text-thin">14</h2>篇
+							共<h2 class="ui orange header m-inline-block m-text-thin" th:text="${#arrays.length(types)}">14</h2>个
 						</div>
 					</div>
 				</div>
 				
 				<div class="ui attached segment m-padding-tb-large">
-					<div class="ui labeled button m-margin-tb-tiny">
-						<a href="#" class="ui basic teal button">思考与感悟</a>
-						<div class="ui basic teal left pointing label">24</div>
+					<div class="ui labeled button m-margin-tb-tiny" th:each="type : ${types}">
+						<a href="#" class="ui   button  " th:href="@{/types/{id}(id=${type.id})}" th:classappend="${type.id==activeTypeId} ? 'm-color2' : 'basic'" th:text="${type.name}">思考与感悟</a>
+						<div class="ui basic left pointing label m-text-thin " th:text="${#arrays.length(type.blogList)}" th:classappend="${type.id==activeTypeId} ? 'm-text-color' ">24</div>
 					</div>
+					<!--/*-->
 					<div class="ui labeled button m-margin-tb-tiny">
 						<a href="#" class="ui basic  button">开发者手册</a>
 						<div class="ui basic  left pointing label">24</div>
@@ -77,8 +78,46 @@
 						<a href="#" class="ui basic  button">开发者手册</a>
 						<div class="ui basic  left pointing label">24</div>
 					</div>
+					<!--*/-->
 				</div>
-				<div class="ui teal top attached segment ">
+				<div class="ui  top attached segment m-border ">
+					<div class="ui padded vertical segment m-padding-tb-large" th:each="blog : ${page.list}">
+						<div class="ui middle aligned mobile reversed stackable grid" >
+							<div class="eleven wide column">
+								<h3 class="ui header" ><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗?</a></h3>
+								<p class="m-text" th:text="|${blog.description}......|">正确做好任何一件事情的前提是清晰、正确的理解目标。而事实是，我们很多人很多时候根本没有对目标正确的定义，甚至根本从来就没有想过，只是大家都那么做而已…...</p>
+								<div class="ui grid">
+									<div class="eleven wide column">
+										<div class="ui mini horizontal link list">
+											<div class="item">
+												<img src="https://unsplash.it/100/100?image=1005" th:src="@{https://picsum.photos/seed/100/100/100}" alt="" class="ui avatar image">
+												<div class="content"><a href="#" class="header"  >ZWX</a></div>
+											</div>
+											<div class="item">
+												<i class="calendar icon"></i><span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2017-10-01</span>
+											</div>
+											<div class="item">
+												<i class="eye icon"></i> <span th:text="${blog.views}">2342</span>
+											</div>
+										</div>
+									</div>
+									<div class="right aligned five wide column">
+                  <span th:switch="${blog.typeId}">
+                    <a href="#" target="_blank" class="ui  basic label m-padding-tiny m-text-thin m-border" th:each="type : ${ types1}"   th:case="${type.id}"  th:text="${type.name}" >认知升级</a>
+				</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="five wide column">
+								<a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
+									<img src="https://unsplash.it/800/450?image=1005" th:src="@{${blog.firstPicture}}"  alt="" class="ui rounded image">
+								</a>
+							</div>
+
+						</div>
+					</div>
+					<!--/*-->
 					<div class="ui padded vertical segment m-padding-tb-large m-mobile-lr-clear">
 						<div class="ui mobile reversed stackable grid">
 							<div class="eleven wide column">
@@ -289,58 +328,17 @@
 							</div>
 						</div>
 					</div>
-					<div class="ui padded vertical segment m-padding-tb-large m-mobile-lr-clear">
-						<div class="ui mobile reversed stackable grid">
-							<div class="eleven wide column">
-								<h3 class="ui header">
-									你真的理解XXXX
-								</h3>
-								<p class="m-text">你好，我们是你身体里的细胞。
-					
-									你最近有点不开心。这个问题没有谁比我们更清楚了。
-					
-									所以，我们想跟你说说话，鼓励鼓励你，让你振作起来，重新鼓起勇气。毕竟，你就是我们的全部，是我们的唯一。
-					
-									我们想说，无论别人怎样对你，你始终是我们唯一想要捍卫的人。</p>
-									<div class="ui stackable  grid">
-										<div class="eleven wide column">
-											<div class="ui mini horizontal link list">
-												<div class="item">
-													<img src="https://picsum.photos/seed/100/100/100" alt="" class="ui avatar image">
-													<div class="content">
-													<a href="" class="header">王二狗</a>
-													</div>
-												</div>
-												<div class="item">
-													<i class="calendar icon"></i>2020.11.25
-												</div>
-												<div class="item">
-													<i class="eye icon"></i> 2342
-												</div>
-											</div>
-										</div>
-										<div class="right aligned five wide column">
-											<a href="#" target="_blank" class="ui teal basic label m-padding-tiny m-text-thin">认知升级</a>
-										</div>
-									</div>
-							</div>
-							<div class="five wide column">
-								<a href="#" target="_blank">
-									<img src="https://picsum.photos/seed/200/800/450" class="ui rounded image" alt="" />
-								</a>
-							</div>
-						</div>
-					</div>
-					
+					<!--*/-->
 				</div>
 				<!-- footer -->
-				<div class="ui bottom attached segment">
-					<div class="ui middle aligned two column grid">
+				<div class="ui bottom attached segment" th:if="${page.pages}>1">
+					<div class="ui middle aligned two column grid" >
 						<div class="column">
-							<a href="" class="ui mini teal  basic button">上一页</a>
+							<!--							@{'/tags/'+${activeTagId}(page=${page.number}-1)}-->
+							<a th:href="@{'/types/'+${activeTypeId}(page=${page.pageNum}-1)}"   th:unless="${page.isFirstPage}" href="" class="ui mini   about button m-color2" style="color:white;">上一页</a>
 						</div>
 						<div class="right aligned column">
-							<a href="" class="ui mini teal  basic button">下一页</a>
+							<a th:href="@{'/types/'+${activeTypeId}(page=${page.pageNum}+1)}"  th:unless="${page.isLastPage}" href="" class="ui mini  button m-color2" style="color:white;">下一页</a>
 						</div>
 					</div>
 				</div>

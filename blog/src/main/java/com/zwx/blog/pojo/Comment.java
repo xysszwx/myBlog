@@ -23,6 +23,16 @@ public class Comment implements Serializable {
 
     private List<Comment> replyComment;
 
+    private Boolean adminComment;
+
+    public Boolean getAdminComment() {
+        return adminComment;
+    }
+
+    public void setAdminComment(Boolean adminComment) {
+        this.adminComment = adminComment;
+    }
+
     public List<Comment> getReplyComment() {
         return replyComment;
     }

@@ -2,12 +2,23 @@ package com.zwx.blog.pojo;
 
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
+import java.util.List;
 
 public class Type implements Serializable {
     private Long id;
 
     @NotBlank(message = "内容不能为空")
     private String name;
+
+    private List<Blog> blogList;
+
+    public List<Blog> getBlogList() {
+        return blogList;
+    }
+
+    public void setBlogList(List<Blog> blogList) {
+        this.blogList = blogList;
+    }
 
     private static final long serialVersionUID = 1L;
 

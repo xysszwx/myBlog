@@ -434,7 +434,7 @@ h5,h6{font-size:1em;}
 					</div>
 					<!-- 标签 -->
 					<div class="m-padded-lr-responsive" >
-						<div class="ui basic  left pointing label m-color2" th:each="tag : ${tags}" th:text="${tag.name}">方法论</div>
+						<div class="ui basic  left pointing label m-border-btn m-text-color" th:each="tag : ${tags}" th:text="${tag.name}">方法论</div>
 					</div>
 					<!-- 赞赏 -->
 					<div class="ui center aligned basic segment">
@@ -483,7 +483,10 @@ h5,h6{font-size:1em;}
 										<img src="https://picsum.photos/seed/500/100/100" th:src="${comment.avatar}">
 									</a>
 									<div class="content">
-										<a class="author" th:text="${comment.nickname}">Matt</a>
+										<a class="author" >
+											<span th:text="${comment.nickname}">Matt</span>
+											<div class="ui mini basic left pointing label m-border-btn m-padding-mini" th:if="${comment.adminComment}">博主</div>
+										</a>
 										<div class="metadata">
 											<span class="date" th:text="${#dates.format(comment.createTime,'yyyy-MM-dd HH-mm')}">Today at 5:42PM</span>
 										</div>
@@ -501,7 +504,9 @@ h5,h6{font-size:1em;}
 											</a>
 											<div class="content">
 												<a class="author" >
-													<span th:text="${recomment.nickname}">Matt</span>&nbsp;&nbsp;<span th:text="|@ ${comment.nickname}|" class="m-text-color m-text-thin">@ 小白</span>
+													<span th:text="${recomment.nickname}">Matt</span>
+													<div class="ui mini basic left pointing label m-border-btn m-padding-mini" th:if="${recomment.adminComment}">博主</div>
+													&nbsp;&nbsp;<span th:text="|@ ${comment.nickname}|" class="m-text-color m-text-thin">@ 小白</span>
 												</a>
 												<div class="metadata">
 													<span class="date" th:text="${#dates.format(recomment.createTime,'yyyy-MM-dd HH-mm')}">Today at 5:42PM</span>
@@ -585,13 +590,13 @@ h5,h6{font-size:1em;}
 							<div class="field m-mobile-wide m-margin-bottom-small">
 								<div class="ui left icon input ">
 									<i class="user icon"></i>
-								<input type="text" name="nickname" placeholder="姓名">
+								<input type="text" name="nickname" placeholder="姓名" th:value="${session.user}!=null ? ${session.user.nickname}">
 								</div>
 							</div>
 							<div class="field  m-mobile-wide m-margin-bottom-small">
 								<div class="ui left icon input">
 								<i class="mail icon"></i>
-								<input type="email" name="email" placeholder="邮箱">
+								<input type="email" name="email" placeholder="邮箱" th:value="${session.user}!=null ? ${session.user.email}">
 								</div>
 							</div>
 							<div class="field  m-mobile-wide m-margin-bottom-small">

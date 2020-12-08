@@ -157,4 +157,5 @@
   <select id="countBlogTag" parameterType="long" resultType="int">
     select count(1) from t_blog_tags where blogs_id = #{id}
   </select>
+
 </mapper>

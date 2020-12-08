@@ -43,11 +43,11 @@
 					</div>
 					<div class="five wide column">
 						<div class="ui top attched segment">
-							<div class="ui header">关于我</div>
+							<div class="ui header m-text-color">关于我</div>
 						</div>
 						<div class="ui attached segment">
-							<p class="m-text">xxx 一个人独立开发者xxxxxxxxxxxxxxxxxxxxxx</p>
-							<p class="m-text">xxxxxxxxxxxxxxxxxxxxxxxxx</p>
+							<p class="m-text m-text-color" >&nbsp;&nbsp;&nbsp;一个独立开发者</p>
+							<p class="m-text m-text-color">&nbsp;&nbsp;&nbsp;前端CV大法精通,后端懂的不多,还在学习中,仅以此博客用来分享学习时的心路和日志</p>
 						</div>
 						<div class="ui attached segment">
 							<div class="ui orange basic left pointing label">编程</div>
@@ -57,16 +57,17 @@
 
 						</div>
 						<div class="ui attached segment">
-							<div class="ui teal basic left pointing label m-margin-tb-tiny">java</div>
-							<div class="ui teal basic left pointing label m-margin-tb-tiny">js</div>
-							<div class="ui teal basic left pointing label m-margin-tb-tiny">node</div>
-							<div class="ui teal basic left pointing label m-margin-tb-tiny">react</div>
-							<div class="ui teal basic left pointing label m-margin-tb-tiny">Mysql</div>
-							<div class="ui teal basic left pointing label m-margin-tb-tiny">...</div>
+							<div class="ui  basic left pointing label m-margin-tb-tiny m-border-btn-o m-text-color">Java</div>
+							<div class="ui  basic left pointing label m-margin-tb-tiny m-border-btn-o m-text-color">JavaScript</div>
+							<div class="ui  basic left pointing label m-margin-tb-tiny m-border-btn-o m-text-color">SpringBoot</div>
+							<div class="ui  basic left pointing label m-margin-tb-tiny m-border-btn-o m-text-color">Thymeleaf</div>
+							<div class="ui  basic left pointing label m-margin-tb-tiny m-border-btn-o m-text-color">Redis</div>
+							<div class="ui  basic left pointing label m-margin-tb-tiny m-border-btn-o m-text-color">Mysql</div>
+							<div class="ui  basic left pointing label m-margin-tb-tiny m-border-btn-o m-text-color">...</div>
 							
 						</div>
 						<div class="ui bottom attached segment">
-							<a href="#" class="ui circular icon button"><i class="github icon"></i></a>
+							<a href="#" class="ui git circular icon button" data-content="xysszwx" data-position="bottom center"><i class="github icon"></i></a>
 							<a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i></a>
 							<a href="#" class="ui qq circular icon button" data-content="2909420436" data-position="bottom center"><i class="qq icon"></i></a>
 						</div>
@@ -124,6 +125,8 @@
 			</div>
 
 		</footer>
+		<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+		<!--/*/</th:block>/*/-->
 		<script src = "https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js" >
 		</script>
 		<script type="text/javascript">
@@ -135,6 +138,7 @@
 				position : 'bottom center'
 			});
 			$('.qq').popup();
+			$('.git').popup();
 		</script>
 		
 		<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script> -->

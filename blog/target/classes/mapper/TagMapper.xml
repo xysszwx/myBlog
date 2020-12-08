@@ -190,6 +190,6 @@
   </select>
   
   <select id="selectByBlogId" parameterType="long" resultType="com.zwx.blog.pojo.Tag">
-    select t.* from t_tag t left join t_blog_tags bt on t.id = bt.tags_id where bt.blogs_id = #{id}
+    select DISTINCT t.* from t_tag t left join t_blog_tags bt on t.id = bt.tags_id where bt.blogs_id = #{id}
   </select>
 </mapper>

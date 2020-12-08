@@ -20,7 +20,7 @@
             <a href="#" th:href="@{/}"  class="m-item item m-mobile-hide m-padded-tb-big m-text-size m-margin-big" th:classappend="${n==1} ? 'active'" style="color:white !important;"><i class="m-i-small home icon"></i>首页</a>
             <a href="#" th:href="@{/types/-1}"  class="m-item item m-mobile-hide m-padded-tb-big m-text-size m-margin-big" th:classappend="${n==2} ? 'active'" style="color:white !important;"><i class="m-i-small idea icon"></i>分类</a>
             <a href="#" th:href="@{/tags/-1}" class="m-item item m-mobile-hide m-padded-tb-big m-text-size m-margin-big" th:classappend="${n==3} ? 'active'" style="color:white !important;"><i class="m-i-small tags icon"></i>标签</a>
-            <a href="#" th:href="@{/archives/-1}" class="m-item item m-mobile-hide m-padded-tb-big m-text-size m-margin-big" th:classappend="${n==4} ? 'active'" style="color:white !important;"><i class="m-i-small clone icon"></i>归档</a>
+            <a href="#" th:href="@{/archives}" class="m-item item m-mobile-hide m-padded-tb-big m-text-size m-margin-big" th:classappend="${n==4} ? 'active'" style="color:white !important;"><i class="m-i-small clone icon"></i>归档</a>
             <a href="#" th:href="@{/about}" class="m-item item m-mobile-hide m-padded-tb-big m-text-size m-margin-big" th:classappend="${n==5} ? 'active'" style="color:white !important;"><i class="m-i-small info icon"></i>关于我</a>
             <div class="right m-item item m-mobile-hide">
                 <form name="search" action="#" th:action="@{/search}" method="post" target="_blank">
@@ -49,10 +49,14 @@
 
             <div class="three wide column">
                 <h4 class="ui inverted header m-text-spaced  m-opacity-mini" style="color:white !important;"><span style="color:white !important;">最新博客</span></h4>
-                <div class="ui inverted link list">
+                <div id="newblog-container">
+                <div class="ui inverted link list" th:fragment="newblogList">
+                    <a href="" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="item" th:each="blog : ${newblogs}" th:text="${blog.title}">用户故事（user story)</a>
+                    <!--/*-->
                     <a href="" class="item">用户故事（user story)</a>
                     <a href="" class="item">用户故事（user story)</a>
-                    <a href="" class="item">用户故事（user story)</a>
+                    <!--*/-->
+                </div>
                 </div>
             </div>
             <div class="three wide column" >
@@ -64,14 +68,20 @@
             </div>
             <div class="seven wide column">
                 <h4 class="ui inverted header m-text-spaced  m-opacity-mini" style="color:white !important;"><span style="color:white !important;">Blog</span></h4>
-                <p class="m-text-spaced m-text-thin m-opacity-mini">这是一个个人博客这是一个个人博客这是一个个人博客这是一个个人博客这是一个个人博客</p>
+                <p class="m-text-spaced m-text-thin m-opacity-mini">这里是xysszwx的个人博客
+                                分享那些让人掉头发的经历</p>
             </div>
         </div>
         <div class="ui inverted section divider"></div>
-        <p class="m-text-spaced m-text-thin m-opacity-tiny">Copyright 2020-2020 Listendnasd asd asdas </p>
+        <p class="m-text-spaced m-text-thin m-opacity-tiny">Copyright © 2019 - <span th:text="${#dates.year(#dates.createNow())}">2017</span> xysszwx Designed by xysszwx</p>
     </div>
 
 </footer>
+<th:block th:fragment="script">
+    <script>
+        $('#newblog-container').load(/*[[@{/footer/newblog}]]*/"/footer/newblog");
+    </script>
+</th:block>
 
 
 </body>

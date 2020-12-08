@@ -89,18 +89,18 @@ public class IndexController {
 
 
 
-    @GetMapping("/tags")
-    public String tags(){
-        return "tags";
-    }
 
-    @GetMapping("/archives")
-    public String archives(){
-        return "archives";
-    }
+
+
 
     @GetMapping("/about")
     public String about(){
         return "about";
+    }
+
+    @GetMapping("/footer/newblog")
+    public String newblogs(Model model) {
+        model.addAttribute("newblogs", blogService.selectRecommend(3));
+        return "_fragments :: newblogList";
     }
 }

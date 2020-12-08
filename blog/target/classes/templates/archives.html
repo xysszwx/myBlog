@@ -41,16 +41,25 @@
 				<div class="ui top attached padded segment">
 					<div class="ui middle aligned two column grid">
 						<div class="column">
-							<h3 class="ui teal header">归档</h3>
+							<h3 class="ui  header m-text-color">归档</h3>
 						</div>
 						<div class="right aligned column">
-							共<h2 class="ui orange header m-inline-block m-text-thin">114</h2>篇 博客
+							共<h2 class="ui orange header m-inline-block m-text-thin" th:text="${blogCount}">114</h2>篇 博客
 						</div>
 					</div>
 				</div>
-				
-				<h2 class="ui center aligned header">2017</h2>
+
+				<th:block th:each="item : ${archiveMap}">
+				<h2 class="ui center aligned header" style="color:white !important;" th:text="${item.key}">2017</h2>
 				<div class="ui fluid vertical menu" >
+					<a href="#" target="_blank" class="item" th:href="@{/blog/{id}(id=${blog.id})}" th:each="blog : ${item.value}">
+						<span>
+							<i class="mini  circle icon m-text-color"></i><span th:text="${blog.title}" style="margin-left:1.5em !important;">清单</span>
+							<div class="ui   basic left pointing label m-padding-mini m-border-btn m-text-color" th:text="${#dates.format(blog.updateTime,'MM-dd')}">9月3号</div>
+						</span>
+						<div class="ui  orange basic left pointing label m-padding-mini" th:text="${blog.flag}">原创</div>
+					</a>
+					<!--/*-->
 					<a href="#" target="_blank" class="item">
 						<span>
 							<i class="mini teal circle icon"></i>清单
@@ -72,17 +81,11 @@
 						</span>
 						<div class="ui  orange basic left pointing label m-padding-mini">原创</div>
 					</a>
-					<a href="#" target="_blank" class="item">
-						<span>
-							<i class="mini teal circle icon"></i>清单
-							<div class="ui  teal basic left pointing label m-padding-mini">9月3号</div>
-						</span>
-						<div class="ui  orange basic left pointing label m-padding-mini">原创</div>
-					</a>
-						
+					<!--*/-->
 					
 				</div>
-				
+				</th:block>
+				<!--/*-->
 				<h2 class="ui center aligned header">2018</h2>
 				<div class="ui fluid vertical menu" >
 					<a href="#" target="_blank" class="item">
@@ -184,6 +187,8 @@
 						
 					
 				</div>
+				<!--*/-->
+
 			</div>
 		</div>
 		

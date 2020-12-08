@@ -17,13 +17,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Service
-public class BlogServiceImpl
-        implements BlogService{
+public class BlogServiceImpl implements BlogService{
 
     @Resource
     private BlogMapper blogMapper;
@@ -129,6 +126,18 @@ public class BlogServiceImpl
         return blogMapper.updateByPrimaryKey(blog);
     }
 
+    @Override
+    public Map<String, List<Blog>> archiveBlog() {
+        TreeMap<String,List<Blog>> map = new TreeMap<>(Comparator.reverseOrder());
+        List<String> years = blogMapper.queryYears();
+        System.out.println(years.toString());
+        for(String year : years){
+            map.put(year,blogMapper.queryBList(year));
+        }
+
+        return map;
+    }
+
     @Transactional
     @Override
     public void deleteBlog(Long id) {
@@ -149,6 +158,12 @@ public class BlogServiceImpl
         criteria.andTypeIdEqualTo(id);
         List<Blog> blogs = blogMapper.selectByExample(blogExample);
         return blogs;
+    }
+
+    @Override
+    public Long countBlog() {
+        Long count = blogMapper.countBlog();
+        return count;
     }
 
     @Override

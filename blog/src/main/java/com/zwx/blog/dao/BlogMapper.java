@@ -44,4 +44,9 @@ public interface BlogMapper {
 
     List<Blog> selectByTId(Long id);
 
+    List<String> queryYears();
+
+    List<Blog> queryBList(String year);
+
+    Long countBlog();
 }

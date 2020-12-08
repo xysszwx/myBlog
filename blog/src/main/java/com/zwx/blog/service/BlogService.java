@@ -6,6 +6,7 @@ import com.zwx.blog.pojo.vo.BlogQuery;
 import com.zwx.blog.pojo.vo.SelectPage;
 
 import java.util.List;
+import java.util.Map;
 
 
 public interface BlogService {
@@ -24,13 +25,15 @@ public interface BlogService {
 
     int updateBlog(Long id ,Blog blog);
 
-
+    Map<String,List<Blog>> archiveBlog();
 
     void deleteBlog(Long id);
 
     List<Blog> selectRecommend(Integer size);
 
     List<Blog> queryBlogList(Long id);
+
+    Long countBlog();
 
     PageInfo<Blog> listByTag(SelectPage selectPage);
     List<Blog> queryBlogs(Long id);

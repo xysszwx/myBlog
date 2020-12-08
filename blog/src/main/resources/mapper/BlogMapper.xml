@@ -529,8 +529,18 @@ select max(id) from t_blog
         update t_blog set views = views+1 where id = #{id}
   </update>
   <select id="selectByTId" parameterType="long" resultType="com.zwx.blog.pojo.Blog">
-    select b.* from t_blog b left join t_blog_tags bt on b.id = bt.blogs_id
+    select distinct b.* from t_blog b left join t_blog_tags bt on b.id = bt.blogs_id
         where tags_id = #{id}
 
+  </select>
+  
+  <select id="queryYears" resultType="string">
+        select date_format(b.update_time,'%Y') as years from t_blog b group by years order by years
+  </select>
+  <select id="queryBList" parameterType="string" resultType="com.zwx.blog.pojo.Blog">
+    select * from t_blog b where date_format(b.update_time,'%Y') = #{year}
+  </select>
+  <select id="countBlog" resultType="long">
+    select count(1) from t_blog
   </select>
 </mapper>

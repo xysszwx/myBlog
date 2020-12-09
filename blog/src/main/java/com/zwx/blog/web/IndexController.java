@@ -48,9 +48,10 @@ public class IndexController {
 //        }
 //        System.out.println(id+"."+name);
         //默认4条一页
-        blogQuery.setPageSize(6);
+        blogQuery.setPageSize(7);
         //默认在第一页 可以传数据
         blogQuery.setPageNum(page);
+        blogQuery.setPublished(true);
         model.addAttribute("page",blogService.listBlog(blogQuery));
         model.addAttribute("types",typeService.listTypeTop(6));
         model.addAttribute("types1",typeService.listType());

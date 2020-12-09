@@ -4,9 +4,15 @@ public class BlogQuery extends SelectPage{
     private String title;
     private Boolean recommend;
     private Long typeId;
+    private Boolean published;
 
+    public Boolean getPublished() {
+        return published;
+    }
 
-
+    public void setPublished(Boolean published) {
+        this.published = published;
+    }
 
     public Long getTypeId() {
         return typeId;

@@ -38,7 +38,7 @@
 		</nav>
 
 			<!-- 中间内容 -->
-		<div class="m-padding-tb-big m-container">
+		<div class="m-padding-tb-big m-container animated fadeIn">
 			<div class="ui container">
 				<div class="ui stackable grid">
 					<!-- 左边的博客列表 -->
@@ -429,13 +429,13 @@
 										<i class="idea icon"></i>分类
 									</div>
 									<div class="right aligned column">
-										<a href="" target="_blank" class="m-text-color">more <i class="angle double right icon"></i></a>
+										<a href="" th:href="@{/types/-1}" target="_blank" class="m-text-color">more <i class="angle double right icon"></i></a>
 									</div>
 								</div>
 							</div>
 							<div class="ui segment m-color" >
 								<div class="ui fluid vertical menu m-color2" th:each="type1 : ${types}">
-									<a href="#" class="item" >
+									<a href="#" class="item"  th:href="@{/types/{id}(id=${type1.id})}" target="_blank" >
 										<span th:text="${type1.name}" style="color:white;">学习日志</span>
 <!--										<div class="ui label basic left pointing teal">13</div>-->
 									</a>
@@ -485,13 +485,13 @@
 										<i class="tags icon"></i>标签
 									</div>
 									<div class="right aligned column">
-										<a href="" target="_blank" class="m-text-color">more <i class="angle double right icon"></i></a>
+										<a href="" th:href="@{/tags/-1}" target="_blank" class="m-text-color">more <i class="angle double right icon"></i></a>
 									</div>
 								</div>
 							</div>
 							
 							<div class="ui  segment m-color">
-								<a href="#" target="_blank" class="ui label  basic left pointing  m-margin-tb-tiny m-color2" th:each="tag:${tags}">
+								<a href="#" th:href="@{/tags/{id}(id=${tag.id})}"  target="_blank" class="ui label  basic left pointing  m-margin-tb-tiny m-color2" th:each="tag:${tags}">
 									<span th:text="${tag.name}" style="color:white;">方法论</span>
 <!--									<div class="detail" >23</div>-->
 								</a>
@@ -611,7 +611,9 @@
 			</div>
 
 		</footer>
-
+		<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+			<script type="text/javascript"></script>
+		<!--/*/</th:block>/*/-->
 
 
 		<script type="text/javascript">

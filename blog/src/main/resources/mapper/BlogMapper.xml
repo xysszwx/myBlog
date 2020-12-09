@@ -386,7 +386,7 @@
   </update>
 
   <select id="selectByParams" parameterType="com.zwx.blog.pojo.vo.BlogQuery" resultType="com.zwx.blog.pojo.Blog">
-    select  * from t_blog b,t_type t
+    select  b.* from t_blog b,t_type t
 
     <where>
       b.type_id = t.id
@@ -401,6 +401,11 @@
       <if test="recommend!=null  ">
         <if test="recommend!=false">
           and recommend = 1
+        </if>
+      </if>
+      <if test="published!=null  ">
+        <if test="published!=false">
+          and published = 1
         </if>
       </if>
     </where>

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import java.util.Random;
 
 @Controller
 public class CommentController {
@@ -38,7 +39,9 @@ public class CommentController {
             comment.setAvatar(user.getAvatar());
             comment.setAdminComment(true);
         }else{
-            comment.setAvatar("https://picsum.photos/seed/100/100/100");
+            Random r1 = new Random();
+            int r2 = r1.nextInt(1000);
+            comment.setAvatar("https://picsum.photos/seed/"+r2+"/100/100");
 
         }
         commentService.saveComment(comment);

@@ -11,7 +11,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 public class BlogApplication extends SpringBootServletInitializer {
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-        return super.configure(builder);
+        return builder.sources(BlogApplication.class);
     }
 
     public static void main(String[] args) {

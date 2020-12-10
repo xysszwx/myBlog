@@ -13,8 +13,8 @@ logging:
   level:
     com.zwx: debug
     org.springframework: info
-  file:
-    name: log/blog-dev.log
+#  file:
+#    name: log/blog-dev.log
 mybatis:
   type-aliases-package: com.zwx.blog.po
   configuration:
